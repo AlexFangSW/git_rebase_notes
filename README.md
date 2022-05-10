@@ -69,7 +69,7 @@ pick 35de527 yeet
 ```
 ## break後如果要繼續 <br>
 ```
-# 繼續前先看一下接下來要做的, 可以作調整
+# 先看一下接下來要做的, 可以作調整(會顯示類似開始rebase時出現的檔案)
 git rebase --edit-todo
 確定要繼續
 git rebase --continue
