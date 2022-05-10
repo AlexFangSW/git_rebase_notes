@@ -1,6 +1,6 @@
 # git rebase notes
 
-## 先確檢視當前 commit history
+## 先檢視當前 commit history
 ```
 git log --oneline --graph
 
