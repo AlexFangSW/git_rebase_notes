@@ -29,7 +29,7 @@ git rebase -i master
 
 ## 開始之後會先跳出類似下面這個檔案, 讓你決定要做甚麼
 > 這是用 git rebase -i HEAD~5 的結果 <br>
-> 底下都有講解指令, 這邊也有一篇把過程說的很好: 使用 [Git Rebase Interactive 模式整理 Commit](https://www.gss.com.tw/blog/%E4%BD%BF%E7%94%A8-git-rebase-interactive-%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86-commit) <br>
+> 底下都有講解指令, 這邊也有一篇把過程說的很好: [使用 Git Rebase Interactive 模式整理 Commit](https://www.gss.com.tw/blog/%E4%BD%BF%E7%94%A8-git-rebase-interactive-%E6%A8%A1%E5%BC%8F%E6%95%B4%E7%90%86-commit) <br>
 > 大部分都很好理解, 就不多說了, 後面只記錄split commit部分.
 ```
 pick cecc7e6 更新「README.md」
