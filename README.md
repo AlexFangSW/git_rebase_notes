@@ -1,2 +1,2 @@
-# git_rebase_notes
+# git rebase notes
 git rebase note
