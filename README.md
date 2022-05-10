@@ -107,5 +107,6 @@ git push <remote> <branch> --force-with-lease
 
 git push origin test_branch --force-with-lease
 
+git push --force-with-lease
 ```
 
