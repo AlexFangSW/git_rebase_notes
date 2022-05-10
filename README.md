@@ -11,7 +11,7 @@ git log --oneline --graph
 
 ## Start rebase interactive
 ```
-# 從某個commit到當前的要做rebase
+# 從某個commit開始做rebase
 git rebase -i 6f607a9
 
 # 如上, 不過再往前一個commit: 注意 "^"
