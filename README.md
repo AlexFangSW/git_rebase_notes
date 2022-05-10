@@ -34,9 +34,10 @@ git rebase -i master
 ```
 pick cecc7e6 更新「README.md」
 pick 865d85b 更新「README.md」
+break                         # break要放在這邊, 做完上面的會先暫停
 pick 165ed11 Update README.md
-pick 8907920 Update README.md
-pick 35de527 yeet
+edit 8907920 Update README.md # 使用edit到這裡會停下, 讓你重新commit東西, 也就是split
+pick 35de527 yeet 
 
 # Rebase 6768593..35de527 onto 6768593 (5 commands)
 #
@@ -66,3 +67,45 @@ pick 35de527 yeet
 # However, if you remove everything, the rebase will be aborted.
 #
 ```
+## break後如果要繼續 <br>
+```
+# 繼續前先看一下接下來要做的, 可以作調整
+git rebase --edit-todo
+確定要繼續
+git rebase --continue
+```
+## Conflict
+```
+# 處理一下衝突後
+git add <filename>
+git rebase --continue
+```
+## Split commit
+> 要split的前面要用 edit <br>
+> > edit cecc7e6 some text
+```
+# 到點後記得再往前一個紀錄, 這樣那些被commit的檔案才會回復成還沒被add的狀態, 從這邊開始我們的split
+git reset HEAD^
+
+# 把想要歸為一個commit的add
+git add <file>
+
+# add 完後commit
+git commit -m "split a commit!!"
+
+# 不斷重複前2個步驟直到沒有檔案還需要commit.
+# 完成後在最後下 --continue結束edit
+git rebase --continue
+
+```
+## 完成rebase想push上去
+> 如果直接用git push 大概會出事. <br>
+> 但用 --force 又不太好, 所以使用git --force-with-lease <br>
+> 這邊有一篇在講解為甚麼 [–force considered harmful; understanding git’s –force-with-lease](https://blog.developer.atlassian.com/force-with-lease/)
+```
+git push <remote> <branch> --force-with-lease
+
+git push origin test_branch --force-with-lease
+
+```
+
