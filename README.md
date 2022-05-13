@@ -82,7 +82,9 @@ git rebase --continue
 ```
 ## Split commit
 > 要split的前面要用 edit <br>
-> > edit cecc7e6 some text
+> > ... <br>
+> > edit cecc7e6 commit_message <br>
+> > ... 
 ```
 # 到點後記得再往前一個紀錄, 這樣那些被commit的檔案才會回復成還沒被add的狀態, 從這邊開始我們的split
 git reset HEAD^
